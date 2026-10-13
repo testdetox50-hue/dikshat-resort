@@ -72,6 +72,40 @@
     </div>
   </section>
 
+  <section id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What are the check-in and check-out times?</button>
+      <div class="faq-a"><p>Check-in is from 2 PM and check-out is by 11 AM.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Are pets allowed?</button>
+      <div class="faq-a"><p>Small pets are welcome in selected rooms. Please call ahead.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is breakfast included?</button>
+      <div class="faq-a"><p>Yes, a complimentary breakfast is included with every stay.</p></div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>Book Your Stay</h2>
+    <form id="booking-form">
+      <label>Check-in <input type="date" id="checkin" required></label>
+      <label>Check-out <input type="date" id="checkout" required></label>
+      <label>Room
+        <select id="room" required>
+          <option value="2500">Standard Room – ₹2,500/night</option>
+          <option value="4000">Deluxe Room – ₹4,000/night</option>
+          <option value="7000">Suite – ₹7,000/night</option>
+        </select>
+      </label>
+      <label>Guests <input type="number" id="guests" min="1" max="6" value="2" required></label>
+      <p id="booking-summary" class="summary" aria-live="polite"></p>
+      <button class="btn" type="submit">Reserve</button>
+    </form>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
     <form id="contact-form">
@@ -83,6 +117,10 @@
   </section>
 
   <footer>&copy; 2026 Dikshat Resort</footer>
+  <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  <button id="back-to-top" aria-label="Back to top">&uarr;</button>
   <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/extras.js"></script>
 </body>
 </html>
