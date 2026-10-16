@@ -10,9 +10,13 @@
   <header class="hero">
     <nav>
       <span class="logo">Dikshat Resort</span>
-      <ul>
-        <li><a href="#rooms">Rooms</a></li>
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul id="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -37,6 +41,71 @@
     </div>
   </section>
 
+  <section id="amenities">
+    <h2>Amenities</h2>
+    <div class="cards">
+      <div class="card"><h3>🏊 Swimming Pool</h3><p>Open daily, 7am – 9pm.</p></div>
+      <div class="card"><h3>🍽️ Restaurant</h3><p>Local and continental cuisine.</p></div>
+      <div class="card"><h3>💆 Spa</h3><p>Massages and wellness therapies.</p></div>
+      <div class="card"><h3>📶 Free Wi-Fi</h3><p>High-speed internet throughout.</p></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="tile" style="--c:#2e7d6b">Pool</div>
+      <div class="tile" style="--c:#f4a259">Sunset</div>
+      <div class="tile" style="--c:#5b8e7d">Garden</div>
+      <div class="tile" style="--c:#bc4b51">Dining</div>
+      <div class="tile" style="--c:#8cb369">Trails</div>
+      <div class="tile" style="--c:#4a6fa5">Lake</div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <h2>Guest Reviews</h2>
+    <div class="cards">
+      <blockquote class="card">“Perfect weekend escape. Loved the food!”<footer>— Aarav S.</footer></blockquote>
+      <blockquote class="card">“Peaceful, clean and friendly staff.”<footer>— Meera K.</footer></blockquote>
+      <blockquote class="card">“Great for families. Kids loved the pool.”<footer>— Rohan P.</footer></blockquote>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What are the check-in and check-out times?</button>
+      <div class="faq-a"><p>Check-in is from 2 PM and check-out is by 11 AM.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Are pets allowed?</button>
+      <div class="faq-a"><p>Small pets are welcome in selected rooms. Please call ahead.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is breakfast included?</button>
+      <div class="faq-a"><p>Yes, a complimentary breakfast is included with every stay.</p></div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>Book Your Stay</h2>
+    <form id="booking-form">
+      <label>Check-in <input type="date" id="checkin" required></label>
+      <label>Check-out <input type="date" id="checkout" required></label>
+      <label>Room
+        <select id="room" required>
+          <option value="2500">Standard Room – ₹2,500/night</option>
+          <option value="4000">Deluxe Room – ₹4,000/night</option>
+          <option value="7000">Suite – ₹7,000/night</option>
+        </select>
+      </label>
+      <label>Guests <input type="number" id="guests" min="1" max="6" value="2" required></label>
+      <p id="booking-summary" class="summary" aria-live="polite"></p>
+      <button class="btn" type="submit">Reserve</button>
+    </form>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
     <form id="contact-form">
@@ -48,6 +117,10 @@
   </section>
 
   <footer>&copy; 2026 Dikshat Resort</footer>
+  <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  <button id="back-to-top" aria-label="Back to top">&uarr;</button>
   <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/extras.js"></script>
 </body>
 </html>

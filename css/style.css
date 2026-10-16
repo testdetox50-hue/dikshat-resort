@@ -13,4 +13,57 @@ section { padding: 4rem 2rem; max-width: 1000px; margin: auto; text-align: cente
 .card { padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,.1); }
 form { display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: 1.5rem auto 0; }
 input, textarea { padding: .7rem; border: 1px solid #ccc; border-radius: 4px; font: inherit; }
-footer { text-align: center; padding: 1.5rem; background: #222; color: #fff; }
+body > footer { text-align: center; padding: 1.5rem; background: #222; color: #fff; }
+blockquote footer { margin-top: .75rem; font-size: .9rem; color: #666; }
+html { scroll-behavior: smooth; }
+.menu-toggle { display: none; background: none; border: 0; color: #fff; font-size: 1.6rem; cursor: pointer; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.tile { height: 160px; display: flex; align-items: center; justify-content: center; background: var(--c); color: #fff; font-weight: 600; border-radius: 8px; transition: transform .3s; }
+.tile:hover { transform: scale(1.04); }
+.card { transition: transform .3s, box-shadow .3s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,0,0,.15); }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
+.reveal.visible { opacity: 1; transform: none; }
+#contact-form .error { color: #bc4b51; font-size: .9rem; }
+#booking-form { display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: 1.5rem auto 0; text-align: left; }
+#booking-form label { display: flex; flex-direction: column; gap: .3rem; font-weight: 500; }
+select { padding: .7rem; border: 1px solid #ccc; border-radius: 4px; font: inherit; }
+.summary { min-height: 1.5rem; font-weight: 600; color: #2e7d6b; }
+.summary.error { color: #bc4b51; }
+#back-to-top { position: fixed; right: 1.25rem; bottom: 1.25rem; width: 44px; height: 44px; border: 0; border-radius: 50%; background: #2e7d6b; color: #fff; font-size: 1.2rem; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .3s; }
+#back-to-top.show { opacity: 1; pointer-events: auto; }
+/* Lightbox */
+#lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: none; align-items: center; justify-content: center; gap: 1rem; z-index: 100; }
+#lightbox.open { display: flex; }
+.lb-content { width: min(80vw, 700px); height: min(60vh, 420px); display: flex; align-items: center; justify-content: center; border-radius: 10px; color: #fff; font-size: 2rem; font-weight: 700; }
+#lightbox button { background: none; border: 0; color: #fff; font-size: 2rem; cursor: pointer; padding: .5rem 1rem; }
+.lb-close { position: absolute; top: 1rem; right: 1rem; }
+
+/* FAQ */
+.faq-item { border-bottom: 1px solid #ddd; text-align: left; }
+.faq-q { width: 100%; text-align: left; background: none; border: 0; padding: 1rem 0; font: inherit; font-weight: 600; cursor: pointer; color: inherit; }
+.faq-q::after { content: '+'; float: right; }
+.faq-item.open .faq-q::after { content: '–'; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s; }
+.faq-item.open .faq-a { max-height: 150px; }
+.faq-a p { padding-bottom: 1rem; }
+
+/* Active nav + theme toggle */
+nav a.active { border-bottom: 2px solid #f4a259; }
+#theme-toggle { position: fixed; left: 1.25rem; bottom: 1.25rem; width: 44px; height: 44px; border: 0; border-radius: 50%; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.3); font-size: 1.2rem; cursor: pointer; z-index: 50; }
+
+/* Dark theme */
+[data-theme="dark"] body { background: #14181a; color: #e6e6e6; }
+[data-theme="dark"] .card { background: #1f2528; box-shadow: 0 2px 10px rgba(0,0,0,.5); }
+[data-theme="dark"] input, [data-theme="dark"] textarea, [data-theme="dark"] select { background: #1f2528; color: #e6e6e6; border-color: #444; }
+[data-theme="dark"] .faq-item { border-color: #333; }
+[data-theme="dark"] blockquote footer { color: #aaa; }
+[data-theme="dark"] #theme-toggle { background: #333; }
+
+@media (max-width: 700px) {
+  .menu-toggle { display: block; }
+  nav { flex-wrap: wrap; }
+  nav ul { display: none; flex-direction: column; width: 100%; gap: .75rem; padding-top: 1rem; }
+  nav ul.open { display: flex; }
+  .hero-text h1 { font-size: 2.1rem; }
+}
